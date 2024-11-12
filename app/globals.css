@@ -7,6 +7,11 @@
   --foreground: #171717;
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,6 +24,87 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.videography{
+    background: url("./rescources/videography.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content_creation{
+    background: url("./rescources/content_creation.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.video_editing{
+    background: url("./rescources/videoediting.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.overlay{
+  transform: translateX(-100%);
+}
+
+.videography:hover > .overlay,
+.content_creation:hover > .overlay,
+.video_editing:hover > .overlay 
+{
+  transform: translateX(0%);
+ 
+}
+
+.wrap{
+  z-index: 2;
+}
+.button_overlay{
+    z-index: 1;
+    transform: translateX(-100%);
+
+}
+.skillBtn:hover > .button_overlay{
+    transform: translateX(0);
+}
+
+.skillBtn:hover > .wrap{
+  color: white;
+}
+
+
+.learn_more{
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation-name: learn_more;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 0;
+}
+
+/* drone pilot */
+.drone_pilot_bg{
+  background: url('./rescources/drone\ pilot.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+.drone_pilot_bg .overlay{
+  transform: translateY(-100%);
+}
+
+.drone_pilot_bg:hover > .overlay
+{
+  transform: translateY(0%);
+}
+
+@keyframes learn_more {
+  50%{
+    transform: translateY(30%);
+  }
+}
+
 
 @layer utilities {
   .text-balance {
